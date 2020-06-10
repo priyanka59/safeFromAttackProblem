@@ -2,7 +2,6 @@ Safe from Attack
 
 Given a chessboard with r rows x c columns, with knights (denoted by n) occupying one or more squares, find the number of unoccupied squares which are not attacked by any knight. The knight moves to square that is two squares away horizontally and one square vertically, or two squares vertically and one square horizontally. The complete move looks like the letter L. The image below show all the possible moves using black colored dots.
 
-knight.png
 
 Input Format
 The first line of input consists of an integer t denoting the number of test cases. t test cases follow. The first line of each test case consists of two integers r denoting the number of rows in the chessboard and c denoting the number of columns. Following r lines of the test case consists of c characters, each either n (knight) or _ (unoccupied square), denoting the rows of the chessboard.
