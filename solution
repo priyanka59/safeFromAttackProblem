@@ -1,0 +1,89 @@
+import java.util.*;
+
+class solution {
+    
+    private static int scanBoard(int r, int c, char[][] board) {
+        int cnt = 0;
+        for (int row = 0; row < r; row++) {
+            for (int col = 0; col < c; col++) {
+                if (board[row][col] == '_') {
+                    cnt++;
+                }
+                //System.out.print(board[row][col]);
+            }
+            //System.out.println();
+        }
+        //System.out.println("");
+        return cnt;
+    }
+    
+    private static void findKnight(int r, int c, char[][] board) {
+        for (int row = 0; row < r; row++) {
+            for (int col = 0; col < c; col++) {
+                if (board[row][col] == 'n') {
+                    markAttack(row, col, r, c, board);
+                }
+                //System.out.print(board[row][col]);
+            }
+        }   
+    }
+    
+    static void markAttack(int i, int j, int m, int n, char[][] board) { 
+  
+        /* conditions to ensure that the  
+           block to be checked is inside the board */
+        char a = 'A';
+        if ((i + 2) < m && (j - 1) >= 0 && board[i + 2][j - 1] != 'n') { 
+            board[i + 2][j - 1] = a; 
+        } 
+        if ((i - 2) >= 0 && (j - 1) >= 0 && board[i - 2][j - 1] != 'n') { 
+            board[i - 2][j - 1] = a; 
+        } 
+        if ((i + 2) < m && (j + 1) < n && board[i + 2][j + 1] != 'n') { 
+            board[i + 2][j + 1] = a; 
+        } 
+        if ((i - 2) >= 0 && (j + 1) < n && board[i - 2][j + 1] != 'n') { 
+            board[i - 2][j + 1] = a; 
+        } 
+        if ((i + 1) < m && (j + 2) < n && board[i + 1][j + 2] != 'n') { 
+            board[i + 1][j + 2] = a; 
+        } 
+        if ((i - 1) >= 0 && (j + 2) < n && board[i - 1][j + 2] != 'n') { 
+            board[i - 1][j + 2] = a; 
+        } 
+        if ((i + 1) < m && (j - 2) >= 0 && board[i + 1][j - 2] != 'n') { 
+            board[i + 1][j - 2] = a; 
+        } 
+        if ((i - 1) >= 0 && (j - 2) >= 0 && board[i - 1][j - 2] != 'n') { 
+            board[i - 1][j - 2] = a; 
+        } 
+    } 
+
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+        int t = sc.nextInt();
+        sc.nextLine();
+        for (int n = 0; n < t; n++) {
+            String rowCols = sc.nextLine();
+            String[] dim = rowCols.split(" ");
+            int r = Integer.parseInt(dim[0]);
+            int c = Integer.parseInt(dim[1]);
+            char[][] board =  new char[r][c];
+            
+            for (int i = 0; i < r; i++) {
+                String line = sc.nextLine();
+                
+                for(int j = 0; j < c; j++) {
+                    board[i][j] = line.charAt(j);
+                }
+                
+            }
+            //makeBoard(board);
+            findKnight(r, c, board);
+            int cnt = scanBoard(r, c, board);
+            System.out.println(cnt);
+        }
+
+    }
+}

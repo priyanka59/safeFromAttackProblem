@@ -1,0 +1,75 @@
+Safe from Attack
+
+Given a chessboard with r rows x c columns, with knights (denoted by n) occupying one or more squares, find the number of unoccupied squares which are not attacked by any knight. The knight moves to square that is two squares away horizontally and one square vertically, or two squares vertically and one square horizontally. The complete move looks like the letter L. The image below show all the possible moves using black colored dots.
+
+knight.png
+
+Input Format
+The first line of input consists of an integer t denoting the number of test cases. t test cases follow. The first line of each test case consists of two integers r denoting the number of rows in the chessboard and c denoting the number of columns. Following r lines of the test case consists of c characters, each either n (knight) or _ (unoccupied square), denoting the rows of the chessboard.
+
+Output Format
+For each test case, output the number of unoccupied squares not attacked by any knight.
+
+Sample Input
+8
+5 5
+_____
+__n__
+__n__
+__n__
+_____
+2 5
+_n___
+___n_
+8 8
+________
+_____n__
+_nn_nn__
+__n_____
+_____n__
+__nn_nn_
+__n_____
+________
+3 3
+n__
+___
+__n
+5 7
+_n_____
+__n____
+___n___
+____n__
+_____n_
+1 2
+nn
+13 13
+_____________
+__n_n_n_n_n__
+_n_n_n_n_n_n_
+__n_n_n_n_n__
+_n_n_n_n_n_n_
+__n_n_n_n_n__
+_n_n_n_n_n_n_
+__n_n_n_n_n__
+_n_n_n_n_n_n_
+__n_n_n_n_n__
+_n_n_n_n_n_n_
+__n_n_n_n_n__
+_____________
+7 8
+_nnnnnnn
+nnn_____
+nnn_____
+_nnnnnn_
+_____nnn
+_____nnn
+nnnnnnn_
+Sample Output
+4
+8
+0
+3
+14
+0
+24
+0
